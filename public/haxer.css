@@ -15,18 +15,33 @@ h1 {
   animation-direction: alternate;
 }
 a {
-  color: white;
+  color: black;
   text-decoration: none;
   padding: 4px 8px;
+  background: white;
 }
 audio { display: none; }
 a:hover {
   color: black;
-  background: white;
+  background: yellow;
+}
+input.url {
+  width: 500px;
+  border: 1px solid gray;
 }
 label {
   width: 100px;
   display: inline-block;
+}
+div.reveal { 
+  font-size: 1.2em;
+  margin: 16px 0 16px 0;
+  padding: 16px;
+  background: darkslategray;
+  color: cyan;
+}
+div.feedback {
+  color: red; 
 }
 div.hint {
   margin-left: 120px;

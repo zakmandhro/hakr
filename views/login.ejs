@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<%- include("head") %>
+
+<body>
+  <%- include("title") %>
+  <form action="/attempt" method="post">
+    <input type="hidden" name="uid" value="<%= uid %>" />
+    <div>
+      <label>username</label>
+      <input id="username" name="username" type="text" required value="<%= username %>" maxlength=12>
+    </div>
+    <div>
+      <label>password</label>
+      <input id="password" name="password" type="text" maxlength=4 autocomplete="off" required
+        style="text-transform: uppercase">
+      <div class="hint">4 chars long using only ABCDEF</div>
+    </div>
+    <% if (locals.feedback) { %>
+    <div class="feedback">
+      𝖷 <%= feedback %>
+    </div>
+    <% } %>
+    <div>
+      <input type="submit" class="button" value="login" />
+    </div>
+  </form>
+  <script>
+    document.getElementById("password").focus()
+    var password = document.getElementById("password")
+    password.addEventListener("keyup", event => {
+      event.stopPropagation()
+      password.value = password.value.toUpperCase().replace(/[^ABCDEF]/g, "")
+    })
+  </script>
+</body>
+
+</html>

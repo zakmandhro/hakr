@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<%- include("head") %>
+
+<body>
+  <%- include("title") %>
+  <h2>access granted!</h2>
+  <div class="reveal">
+    <%= message %>
+  </div>
+  <div>
+    <label>password</label><%= password %>
+  </div>
+  <div>
+    <label>attempts</label><%= attempts %>
+  </div>
+  <p>
+    <a href="/">create your code</a>
+  </p>
+</body>
+
+</html>

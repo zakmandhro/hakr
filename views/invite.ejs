@@ -4,9 +4,10 @@
 
 <body>
   <%- include("title") %>
-  <p>message secured here:
-    <input type="text" value="<%= url %>" />
+  <p>Your message is safe on this URL:
+    <input type="text" class="url" value="<%= url %>" />
   </p>
+  <a href="<%= url %>">login</a>
   <p>hackers can try but they can't get in }:]</p>
 </body>
 

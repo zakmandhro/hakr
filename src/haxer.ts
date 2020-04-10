@@ -8,4 +8,7 @@ export default class Haxer {
     console.log("codes: ", this.codes)
     return code
   }
+  get(uid: string) {
+    return this.codes[uid]
+  }
 }

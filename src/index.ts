@@ -6,7 +6,7 @@ const server = express()
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
 const PORT = 8000
-const BASE_URL = "https://haxer-server.zakmandhro.repl.co/login/"
+const BASE_URL = `http://localhost:${PORT}/login/`
 
 const haxer = new Haxer()
 
@@ -39,6 +39,41 @@ server.post("/code", (req, res) => {
     url: BASE_URL +
       code.uid
   })
+})
+
+server.get("/login/:uid", (req, res) => {
+  const code = haxer.get(req.params.uid)
+  if (code)
+    res.render("login.ejs", {
+      username: code.username,
+      uid: code.uid,
+      message: ""
+    })
+  else
+    res.send("This is not the login you are looking for.")
+})
+
+server.post("/attempt", (req, res) => {
+  const values: any = req.body
+  console.log("values", values)
+  if (!values || !values.uid || !values.password)
+    return res.send("You obviously shouldn't be here.")
+  const code = haxer.get(values.uid)
+  if (!code)
+    return res.send("Please go away.")
+  const attempt = code.attempt(values.password)
+  const result: any = {
+    ...values,
+    ...attempt
+  }
+  if (attempt.result === "granted") {
+    result.message = code.message
+    return res.render("granted.ejs", result)
+  }
+  if (attempt.result === "denied") {
+    return res.render("denied.ejs", result)
+  }
+  res.render("login.ejs", result)
 })
 
 server.listen(PORT, () => {
