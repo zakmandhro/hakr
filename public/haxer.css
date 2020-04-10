@@ -1,0 +1,65 @@
+html, body { 
+  padding: 8px;
+  background: black; 
+  color: white;
+  font-family: "VT323", monaco, menlo, consolas, fixed;
+  font-size: 1.2em;
+}
+h1 {
+  color: yellow; font-size: 1em;
+}
+.shake {
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+a {
+  color: white;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+audio { display: none; }
+a:hover {
+  color: black;
+  background: white;
+}
+label {
+  width: 100px;
+  display: inline-block;
+}
+div.hint {
+  margin-left: 120px;
+  color: #888888;
+  margin-bottom: 16px;
+}
+input, textarea {
+  padding: 8px;
+  background: black;
+  width: 300px;
+  color: white;
+  margin: 8px;
+  font-family: "VT323", monaco, menlo, consolas, fixed;
+  font-size: 1.0em;
+  border: 1px solid gray;
+}
+.button {
+  margin-top: 16px;
+  margin-left: 116px;
+  padding: 8px 32px;
+  font-size: 1.0em;
+  background: gray;
+  width: 320px;
+}
+.button:hover {
+  background: black;
+}
+
+@keyframes textflicker {
+  from {
+    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<%- include("head") %>
+
+<body>
+  <%- include("title") %>
+  <form action="/code" method="post">
+    <div>
+      <label>username</label>
+      <input id="username" name="username" type="text" required value="strider" maxlength=12>
+    </div>
+    <div>
+      <label>password</label>
+      <input id="password" name="password" type="text" value="AABB" maxlength=4 autocomplete="off" required
+        style="text-transform: uppercase">
+      <div class="hint">4 chars long using only ABCDEF</div>
+    </div>
+    <div>
+      <label>message</label>
+      <textarea id="message" name="message" rows=3>This is a secret</textarea>
+    </div>
+    <div>
+      <input type="submit" class="button" value="create" />
+    </div>
+  </form>
+  <script>
+    document.getElementById("username").focus()
+    var password = document.getElementById("password")
+    password.addEventListener("keyup", event => {
+      event.stopPropagation()
+      password.value = password.value.toUpperCase().replace(/[^ABCDEF]/g, "")
+    })
+  </script>
+</body>
+
+</html>
