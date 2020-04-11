@@ -6,7 +6,7 @@ const server = express()
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
 const PORT = process.env.PORT || 5000
-const HOST = process.env.HEROKU_APP_NAME ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com` : "http://localhost:5000"
+const HOST = process.env.TERM_PROGRAM ? "http://localhost:5000" : `https://hakr.herokuapp.com`
 const BASE_URL = `${HOST}/login/`
 
 const haxer = new Haxer()
@@ -78,5 +78,5 @@ server.post("/attempt", (req, res) => {
 
 server.listen(PORT, () => {
   // tslint:disable-next-line:no-console
-  console.log(`haxer server started at http://localhost:${PORT}`)
+  console.log(`haxer server started at ${HOST}`)
 })
