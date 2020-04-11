@@ -6,7 +6,7 @@ const server = express()
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
 const PORT = process.env.PORT || 5000
-const HOST = process.env.HEROKU_APP_NAME ? `https://${HEROKU_APP_NAME}.herokuapp.com` : "http://localhost:5000"
+const HOST = process.env.HEROKU_APP_NAME ? `https://${process.env.HEROKU_APP_NAME}.herokuapp.com` : "http://localhost:5000"
 const BASE_URL = `${HOST}/login/`
 
 const haxer = new Haxer()
