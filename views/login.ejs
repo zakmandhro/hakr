@@ -12,14 +12,14 @@
     </div>
     <div>
       <label>password</label>
-      <input id="password" name="password" type="text" value="<%= password %>" maxlength=4 autocomplete="off" required
+      <input id="password" name="password" type="text" maxlength=4 autocomplete="off" required
         style="text-transform: uppercase">
       <div class="hint">4 chars long using only ABCDEF</div>
     </div>
     <% if (locals.feedback) { %>
     <div class="feedback">
       𝖷 <%= feedback %>
-      <p><%= hint %></p>
+      <p><%= password %>: <%= hint %></p>
     </div>
     <% } %>
     <div>
@@ -34,7 +34,6 @@
     <% } ) %>
   </div>
   <% } %>
-  </div>
   <script>
     document.getElementById("password").focus()
     var password = document.getElementById("password")

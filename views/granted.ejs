@@ -12,8 +12,16 @@
     <label>password</label><%= password %>
   </div>
   <div>
-    <label>attempts</label><%= attempts %>
+    Hacked in: <%= attempts.length %>
   </div>
+  <% if (locals.attempts) { %>
+  <div class="history">
+    <h3>History</h3>
+    <% attempts.forEach( function(attempt) { %>
+    <p><%= attempt.password %>: <%= attempt.hint %></p>
+    <% } ) %>
+  </div>
+  <% } %>
   <p>
     <a href="/">create your code</a>
   </p>

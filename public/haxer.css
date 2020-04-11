@@ -48,6 +48,9 @@ div.hint {
   color: #888888;
   margin-bottom: 16px;
 }
+div.history {
+  color: #aaaaaa;
+}
 input, textarea {
   padding: 8px;
   background: black;

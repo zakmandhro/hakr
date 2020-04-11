@@ -5,9 +5,9 @@
 <body>
   <%- include("title") %>
   <p>Your message is safe on this URL:
-    <input type="text" class="url" value="<%= url %>" />
+    <input type="text" class="url" value="<%= url %>" onClick="this.setSelectionRange(0, this.value.length)" readonly />
   </p>
-  <a href="<%= url %>">login</a>
+  <a href="<%= url %>">test it</a>
   <p>hackers can try but they can't get in }:]</p>
 </body>
 
