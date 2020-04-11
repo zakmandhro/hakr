@@ -46,8 +46,8 @@ server.get("/login/:uid", (req, res) => {
   if (code)
     res.render("login.ejs", {
       username: code.username,
+      password: "",
       uid: code.uid,
-      message: ""
     })
   else
     res.send("This is not the login you are looking for.")
