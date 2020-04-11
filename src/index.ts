@@ -5,8 +5,8 @@ import Haxer from "./haxer"
 const server = express()
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
-const PORT = 8000
-const BASE_URL = `http://localhost:${PORT}/login/`
+const PORT = process.env.PORT || 5000
+const BASE_URL = `https://hakr.herokuapp.com/login/`
 
 const haxer = new Haxer()
 
