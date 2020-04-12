@@ -5,7 +5,10 @@
 <body>
   <%- include("title") %>
   <p>Your message is safe on this URL:
-    <input type="text" class="url" value="<%= url %>" onClick="this.setSelectionRange(0, this.value.length)" readonly />
+    <input type="text" class="url" value="<%= url %>" onClick="
+      this.setSelectionRange(0, this.value.length);
+      document.execCommand('copy');
+      alert('URL copied. Paste and share!') " />
   </p>
   <a href="<%= url %>">test it</a>
   <p>hackers can try but they can't get in }:]</p>

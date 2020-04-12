@@ -10,9 +10,10 @@ export default class Code {
   attempts = []
   constructor({ username, message, password }: { username: string, message: string, password: string }) {
     this.uid = generateQuickGuid()
-    this.username = username
+    this.username = username.toLowerCase()
     this.message = message
-    this.password = password
+    this.password = password.toUpperCase()
+    if (this.password.match(/[^ABCDEF]/g)) throw "Not valid"
   }
   attempt(password) {
     const attempt = new Attempt(password, this.password)

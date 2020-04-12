@@ -44,8 +44,8 @@ div.feedback {
   color: red; 
 }
 div.hint {
-  margin-left: 120px;
   color: #888888;
+  font-size: 0.9em;
   margin-bottom: 16px;
 }
 div.history {
@@ -63,7 +63,6 @@ input, textarea {
 }
 .button {
   margin-top: 16px;
-  margin-left: 116px;
   padding: 8px 32px;
   font-size: 1.0em;
   background: gray;

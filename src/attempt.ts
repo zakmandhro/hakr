@@ -2,7 +2,7 @@ export class Attempt {
   password = ""
   placed = 0
   misplaced = 0
-  hint = ""
+  hint = "No matching letters"
   constructor(private attempted: string, actual: string) {
     this.password = attempted
     let a = attempted.split("")
