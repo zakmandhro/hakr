@@ -1,3 +1,3 @@
 # haxer
 
-A hacking game of decryption based on Mastermind.
+A hacking game of decryption based lightly on Mastermind.
